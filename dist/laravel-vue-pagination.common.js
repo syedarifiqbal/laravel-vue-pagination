@@ -134,6 +134,7 @@ module.exports =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
@@ -153,8 +154,8 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"604a59b1-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=7f71b5a7&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('renderless-laravel-vue-pagination',{attrs:{"data":_vm.data,"limit":_vm.limit,"show-disabled":_vm.showDisabled,"size":_vm.size,"align":_vm.align},on:{"pagination-change-page":_vm.onPaginationChangePage},scopedSlots:_vm._u([{key:"default",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4c495806-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=58909e32&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('renderless-laravel-vue-pagination',{attrs:{"data":_vm.data,"limit":_vm.limit,"show-disabled":_vm.showDisabled,"show-first-last":_vm.showFirstLast,"size":_vm.size,"align":_vm.align},on:{"pagination-change-page":_vm.onPaginationChangePage},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var data = ref.data;
 var limit = ref.limit;
 var showDisabled = ref.showDisabled;
@@ -163,17 +164,19 @@ var align = ref.align;
 var computed = ref.computed;
 var prevButtonEvents = ref.prevButtonEvents;
 var nextButtonEvents = ref.nextButtonEvents;
+var firstButtonEvents = ref.firstButtonEvents;
+var lastButtonEvents = ref.lastButtonEvents;
 var pageButtonEvents = ref.pageButtonEvents;
-return (computed.total > computed.perPage)?_c('ul',{staticClass:"pagination",class:{
+return _c('ul',{staticClass:"pagination",class:{
             'pagination-sm': size == 'small',
             'pagination-lg': size == 'large',
             'justify-content-center': align == 'center',
             'justify-content-end': align == 'right'
-        }},[(computed.prevPageUrl || showDisabled)?_c('li',{staticClass:"page-item pagination-prev-nav",class:{'disabled': !computed.prevPageUrl}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous","tabindex":!computed.prevPageUrl && -1}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((computed.pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active': page == computed.currentPage }},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v("\n                "+_vm._s(page)+"\n                "),(page == computed.currentPage)?_c('span',{staticClass:"sr-only"},[_vm._v("(current)")]):_vm._e()])])}),(computed.nextPageUrl || showDisabled)?_c('li',{staticClass:"page-item pagination-next-nav",class:{'disabled': !computed.nextPageUrl}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next","tabindex":!computed.nextPageUrl && -1}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e()],2):_vm._e()}}],null,true)})}
+        }},[(computed.firstPageUrl || _vm.showFirstLast)?_c('li',{staticClass:"page-item pagination-first-nav",class:{'disabled': !computed.firstPageUrl || computed.currentPage === 1}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"First","tabindex":!computed.firstPageUrl && -1}},firstButtonEvents),[_vm._t("first-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("First «")]),_c('span',{staticClass:"sr-only"},[_vm._v("First")])])],2)]):_vm._e(),(computed.prevPageUrl || showDisabled)?_c('li',{staticClass:"page-item pagination-prev-nav",class:{'disabled': !computed.prevPageUrl}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous","tabindex":!computed.prevPageUrl && -1}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((computed.pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active disabled': page == computed.currentPage },attrs:{"disabled":page == computed.currentPage}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v("\n                "+_vm._s(page)+"\n                "),(page == computed.currentPage)?_c('span',{staticClass:"sr-only"},[_vm._v("(current)")]):_vm._e()])])}),(computed.nextPageUrl || showDisabled)?_c('li',{staticClass:"page-item pagination-next-nav",class:{'disabled': !computed.nextPageUrl}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next","tabindex":!computed.nextPageUrl && -1}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e(),(computed.lastPageUrl || _vm.showFirstLast)?_c('li',{staticClass:"page-item pagination-last-nav",class:{'disabled': !computed.lastPageUrl || computed.currentPage === computed.lastPage}},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next","tabindex":!computed.lastPageUrl && -1}},lastButtonEvents),[_vm._t("last-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("Last »")]),_c('span',{staticClass:"sr-only"},[_vm._v("Last")])])],2)]):_vm._e()],2)}}],null,true)})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=7f71b5a7&
+// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=58909e32&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/RenderlessLaravelVuePagination.vue?vue&type=script&lang=js&
 /* harmony default export */ var RenderlessLaravelVuePaginationvue_type_script_lang_js_ = ({
@@ -187,6 +190,10 @@ var staticRenderFns = []
       default: 0
     },
     showDisabled: {
+      type: Boolean,
+      default: false
+    },
+    showFirstLast: {
       type: Boolean,
       default: false
     },
@@ -213,7 +220,7 @@ var staticRenderFns = []
       return this.isApiResource ? this.data.meta.current_page : this.data.current_page;
     },
     firstPageUrl: function firstPageUrl() {
-      return this.isApiResource ? this.data.links.first : null;
+      return this.isApiResource ? this.data.links.first : this.data.first_page_url;
     },
     from: function from() {
       return this.isApiResource ? this.data.meta.from : this.data.from;
@@ -222,7 +229,7 @@ var staticRenderFns = []
       return this.isApiResource ? this.data.meta.last_page : this.data.last_page;
     },
     lastPageUrl: function lastPageUrl() {
-      return this.isApiResource ? this.data.links.last : null;
+      return this.isApiResource ? this.data.links.last : this.data.last_page_url;
     },
     nextPageUrl: function nextPageUrl() {
       return this.isApiResource ? this.data.links.next : this.data.next_page_url;
@@ -285,6 +292,12 @@ var staticRenderFns = []
     nextPage: function nextPage() {
       this.selectPage(this.currentPage + 1);
     },
+    goLastPage: function goLastPage() {
+      this.selectPage(this.lastPage);
+    },
+    goFirstPage: function goFirstPage() {
+      this.selectPage(1);
+    },
     selectPage: function selectPage(page) {
       if (page === '...') {
         return;
@@ -328,6 +341,20 @@ var staticRenderFns = []
           e.preventDefault();
 
           _this.nextPage();
+        }
+      },
+      firstButtonEvents: {
+        click: function click(e) {
+          e.preventDefault();
+
+          _this.goFirstPage();
+        }
+      },
+      lastButtonEvents: {
+        click: function click(e) {
+          e.preventDefault();
+
+          _this.goLastPage();
         }
       },
       pageButtonEvents: function pageButtonEvents(page) {
@@ -409,7 +436,12 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
       : injectStyles
   }
 
@@ -418,7 +450,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -509,6 +541,24 @@ var component = normalizeComponent(
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ var LaravelVuePaginationvue_type_script_lang_js_ = ({
   props: {
@@ -521,6 +571,10 @@ var component = normalizeComponent(
       default: 0
     },
     showDisabled: {
+      type: Boolean,
+      default: false
+    },
+    showFirstLast: {
       type: Boolean,
       default: false
     },

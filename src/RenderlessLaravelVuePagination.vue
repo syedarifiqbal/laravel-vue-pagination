@@ -13,6 +13,10 @@ export default {
             type: Boolean,
             default: false
         },
+        showFirstLast: {
+            type: Boolean,
+            default: false
+        },
         size: {
             type: String,
             default: 'default',
@@ -37,7 +41,7 @@ export default {
             return this.isApiResource ? this.data.meta.current_page : this.data.current_page;
         },
         firstPageUrl () {
-            return this.isApiResource ? this.data.links.first : null;
+            return this.isApiResource ? this.data.links.first : this.data.first_page_url;
         },
         from () {
             return this.isApiResource ? this.data.meta.from : this.data.from;
@@ -46,7 +50,7 @@ export default {
             return this.isApiResource ? this.data.meta.last_page : this.data.last_page;
         },
         lastPageUrl () {
-            return this.isApiResource ? this.data.links.last : null;
+            return this.isApiResource ? this.data.links.last : this.data.last_page_url;
         },
         nextPageUrl () {
             return this.isApiResource ? this.data.links.next : this.data.next_page_url;
@@ -110,6 +114,12 @@ export default {
         nextPage () {
             this.selectPage((this.currentPage + 1));
         },
+        goLastPage () {
+            this.selectPage((this.lastPage));
+        },
+        goFirstPage () {
+            this.selectPage((1));
+        },
         selectPage (page) {
             if (page === '...') {
                 return;
@@ -150,6 +160,18 @@ export default {
                 click: (e) => {
                     e.preventDefault();
                     this.nextPage();
+                }
+            },
+            firstButtonEvents: {
+                click: (e) => {
+                    e.preventDefault();
+                    this.goFirstPage();
+                }
+            },
+            lastButtonEvents: {
+                click: (e) => {
+                    e.preventDefault();
+                    this.goLastPage();
                 }
             },
             pageButtonEvents: page => ({
